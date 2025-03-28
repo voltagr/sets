@@ -1,0 +1,6 @@
+node_modules/
+dist/
+packages/schema-dts/lib/
+.nyc_output/
+coverage/
+.github/

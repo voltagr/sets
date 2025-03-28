@@ -1,0 +1,95 @@
+{
+  "name": "schema-dts-gen",
+  "version": "1.1.5",
+  "displayName": "schema-dts Generator",
+  "description": "Generate TypeScript Definitions for Schema.org Schema",
+  "author": "Eyas Sharaiha <eyas@google.com> (https://eyas.sh/)",
+  "maintainers": [
+    "Eyas Sharaiha <npm@eyas.sh> (https://eyas.sh/)"
+  ],
+  "contributors": [
+    "Eyas Sharaiha <npm@eyas.sh> (https://eyas.sh/)"
+  ],
+  "files": [
+    "dist/src/**/*"
+  ],
+  "types": "./dist/src/index.d.ts",
+  "main": "./dist/src/index.js",
+  "bin": {
+    "schema-dts-gen": "bin/schema-dts-gen.js"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "devDependencies": {
+    "@jest/globals": "^29.4.3",
+    "@types/argparse": "^2.0.17",
+    "@types/array.prototype.flatmap": "^1.2.6",
+    "@types/jest": "^29.5.14",
+    "@types/n3": "^1.21.1",
+    "@types/node": "^22.13.8",
+    "@types/unist": "^3.0.3",
+    "cross-env": "^7.0.3"
+  },
+  "dependencies": {
+    "argparse": "^2.0.1",
+    "n3": "^1.23.1",
+    "rehype-minify-whitespace": "^6.0.2",
+    "rehype-parse": "^9.0.1",
+    "rehype-raw": "^7.0.0",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.1",
+    "remark-wiki-link": "^2.0.1",
+    "unified": "^11.0.5"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "engineStrict": true,
+  "peerDependencies": {
+    "typescript": ">=4.9.5"
+  },
+  "nyc": {
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "exclude": [
+      "**/*.d.ts",
+      "dist/**/*",
+      "coverage/**/*",
+      "test/**/*",
+      "src/cli/cli.ts"
+    ],
+    "reporter": [
+      "html"
+    ],
+    "all": true
+  },
+  "keywords": [
+    "typescript",
+    "tsd",
+    "dts",
+    "schema.org",
+    "Semantic Web",
+    "semantic-web",
+    "Linked Data",
+    "linked-data",
+    "jsonld",
+    "JSON-LD",
+    "structured data",
+    "structured-data"
+  ],
+  "homepage": "https://opensource.google/projects/schema-dts",
+  "bugs": "https://github.com/google/schema-dts/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/google/schema-dts.git",
+    "directory": "packages/schema-dts-gen"
+  },
+  "license": "Apache-2.0",
+  "scripts": {
+    "lint:eslint": "eslint src/**/*.ts test/**/*.ts",
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --coverage",
+    "build": "tsc -b"
+  }
+}
